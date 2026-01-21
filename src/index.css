@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  /* Aqui você pode adicionar customizações se desejar futuramente */
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+/* Ajuste básico para o Electron ocupar a tela toda sem scroll desnecessário */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  @apply bg-zinc-950 text-zinc-100 antialiased overflow-hidden;
+}
