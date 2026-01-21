@@ -30,7 +30,7 @@ export function SiteView({ siteName, siteUrl, onBack }: SiteViewProps) {
       </div>
 
       {/* Área de Conteúdo do Site */}
-      <div className="flex-1 min-h-[500px] w-full bg-zinc-900/40 border border-zinc-800 rounded-3xl flex flex-col items-center justify-center p-12 text-center">
+      <div className="flex-1 min-h-125 w-full bg-zinc-900/40 border border-zinc-800 rounded-3xl flex flex-col items-center justify-center p-12 text-center">
         <div className="w-20 h-20 bg-zinc-800 rounded-full flex items-center justify-center text-4xl mb-6 animate-bounce">
           🌐
         </div>

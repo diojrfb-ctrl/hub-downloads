@@ -18,7 +18,9 @@ export default function App() {
               <h1 className="text-7xl font-black tracking-tighter italic bg-linear-to-b from-white via-zinc-200 to-zinc-700 bg-clip-text text-transparent">
                 ADULT<span className="text-red-600">HUB</span>
               </h1>
-              <p className="text-zinc-500 mt-4 text-lg font-medium">Selecione uma plataforma para explorar o conteúdo</p>
+              <p className="text-zinc-500 mt-4 text-lg font-medium tracking-tight">
+                Selecione uma plataforma para explorar o conteúdo
+              </p>
             </header>
 
             <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -29,7 +31,7 @@ export default function App() {
                   icon={site.icon}
                   url={site.url}
                   status={site.status}
-                  isSelected={false} // No Hub principal nada está "selecionado" ainda
+                  isSelected={false}
                   onClick={() => setSelectedSite(site)}
                 />
               ))}
@@ -45,14 +47,19 @@ export default function App() {
         )}
       </div>
 
-      <footer className="fixed bottom-0 w-full p-6 border-t border-zinc-900 bg-zinc-950/80 backdrop-blur-md flex justify-between items-center text-[10px] text-zinc-600 font-bold uppercase tracking-widest">
+      {/* Footer Fixo com Status */}
+      <footer className="fixed bottom-0 w-full p-6 border-t border-zinc-900 bg-zinc-950/80 backdrop-blur-md flex justify-between items-center text-[10px] text-zinc-600 font-bold uppercase tracking-widest z-40">
         <p>© 2026 ADULT HUB PROJECT</p>
         <div className="flex gap-4 italic">
-          <span>{selectedSite ? `Navegando em: ${selectedSite.name}` : 'Aguardando Seleção'}</span>
+          <span className="text-red-500/80">
+            {selectedSite ? `Conectado a: ${selectedSite.name}` : 'Aguardando Seleção'}
+          </span>
           <span className="text-zinc-800">•</span>
           <span>v1.0.0</span>
         </div>
       </footer>
+
+      {/* Componente que monitora atualizações em segundo plano */}
       <UpdateNotification />
     </div>
   )
